@@ -21,7 +21,7 @@ export function CryptoChart({
 
   return (
     <div
-      className='rounded-xl'
+      className='rounded-xl max-lg:min-w-48'
       style={{
         background: `radial-gradient(circle at 0% 100%, ${color}50 0%, ${color}30 30%), radial-gradient(circle at 50% 100%, ${color}40 0%, ${color}20 40%, ${color}05 60%), linear-gradient(135deg, ${color}30 0%, transparent 60%)`,
       }}
