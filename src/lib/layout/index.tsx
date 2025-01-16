@@ -1,8 +1,8 @@
-import type { ReactNode } from "react";
-
 import { ThemeProvider } from "next-themes";
-// import { Footer } from "./components/footer";
-// import { Header } from "./components/header";
+import type { ReactNode } from "react";
+import { Header } from "../components/header";
+import { MobileNav } from "../components/mobile-nav";
+import { Sidebar } from "../components/sidebar";
 import { Meta } from "./components/meta";
 
 type LayoutProps = {
@@ -13,10 +13,13 @@ export const Layout = ({ children }: LayoutProps) => {
   return (
     <ThemeProvider attribute='class'>
       <Meta />
-      <div className='flex min-h-screen flex-col dark:bg-black dark:text-white'>
-        {/* <Header /> */}
-        <main className=''>{children}</main>
-        {/* <Footer /> */}
+      <div className='flex bg-[#141414] min-h-screen'>
+        <Sidebar />
+        <div className='flex-1'>
+          <Header />
+          {children}
+          <MobileNav />
+        </div>
       </div>
     </ThemeProvider>
   );

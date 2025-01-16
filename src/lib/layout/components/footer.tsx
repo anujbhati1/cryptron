@@ -1,15 +1,15 @@
 export const Footer = () => {
   return (
-    <footer className="wrapper">
-      <div className="flex">
-        <p className="text-xs">
-          {new Date().getFullYear()} -{' '}
+    <footer className='wrapper'>
+      <div className='flex'>
+        <p className='text-xs'>
+          {new Date().getFullYear()} -{" "}
           <a
-            href="https://agustinusnathaniel.com"
-            target="_blank"
-            rel="noopener noreferrer"
+            href='https://google.com'
+            target='_blank'
+            rel='noopener noreferrer'
           >
-            agustinusnathaniel.com
+            cryptron.com
           </a>
         </p>
       </div>

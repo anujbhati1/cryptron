@@ -1,19 +1,9 @@
-import { Header } from "@/lib/components/header";
-import { MobileNav } from "@/lib/components/mobile-nav";
-import { Sidebar } from "@/lib/components/sidebar";
 import { TransactionHistory } from "@/lib/components/transaction-history";
 
-export default function Page() {
+export default function TransactionHistoryPage() {
   return (
-    <div className='flex bg-[#141414] min-h-screen'>
-      <Sidebar />
-      <div className='flex-1'>
-        <Header />
-        <main className='max-lg:mb-16'>
-          <TransactionHistory />
-        </main>
-        <MobileNav />
-      </div>
-    </div>
+    <main className='max-lg:mb-16'>
+      <TransactionHistory />
+    </main>
   );
 }

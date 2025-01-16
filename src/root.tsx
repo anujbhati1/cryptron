@@ -1,4 +1,4 @@
-import { HelmetProvider } from 'react-helmet-async';
+import { HelmetProvider } from "react-helmet-async";
 import {
   Links,
   Meta,
@@ -6,23 +6,23 @@ import {
   Scripts,
   ScrollRestoration,
   isRouteErrorResponse,
-} from 'react-router';
+} from "react-router";
 
-import { Layout as AppLayout } from '@/lib/layout';
-import type { Route } from './+types/root';
+import { Layout as AppLayout } from "@/lib/layout";
+import type { Route } from "./+types/root";
 
 // fonts
-import '@fontsource-variable/plus-jakarta-sans';
-import '@/lib/styles/globals.css';
+import "@fontsource-variable/plus-jakarta-sans";
+import "@/lib/styles/globals.css";
 
 export function Layout({ children }: { children: React.ReactNode }) {
   return (
-    <html lang="en">
+    <html lang='en'>
       <head>
-        <meta charSet="UTF-8" />
-        <link rel="icon" type="image/svg+xml" href="/assets/favicon.svg" />
-        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-        <title>vite-react-tailwind-starter</title>
+        <meta charSet='UTF-8' />
+        <link rel='icon' type='image/x-icon' href='/assets/cryptron-logo.ico' />
+        <meta name='viewport' content='width=device-width, initial-scale=1.0' />
+        <title>Cryptron</title>
         <Meta />
         <Links />
       </head>
@@ -43,15 +43,15 @@ export default function Root() {
 }
 
 export function ErrorBoundary({ error }: Route.ErrorBoundaryProps) {
-  let message = 'Oops!';
-  let details = 'An unexpected error occurred.';
+  let message = "Oops!";
+  let details = "An unexpected error occurred.";
   let stack: string | undefined;
 
   if (isRouteErrorResponse(error)) {
-    message = error.status === 404 ? '404' : 'Error';
+    message = error.status === 404 ? "404" : "Error";
     details =
       error.status === 404
-        ? 'The requested page could not be found.'
+        ? "The requested page could not be found."
         : error.statusText || details;
   } else if (import.meta.env.DEV && error && error instanceof Error) {
     details = error.message;
@@ -59,11 +59,11 @@ export function ErrorBoundary({ error }: Route.ErrorBoundaryProps) {
   }
 
   return (
-    <main className="pt-16 p-4 container mx-auto">
+    <main className='pt-16 p-4 container mx-auto'>
       <h1>{message}</h1>
       <p>{details}</p>
       {stack && (
-        <pre className="w-full p-4 overflow-x-auto">
+        <pre className='w-full p-4 overflow-x-auto'>
           <code>{stack}</code>
         </pre>
       )}
