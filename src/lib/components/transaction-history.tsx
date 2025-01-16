@@ -73,9 +73,9 @@ export function TransactionHistory() {
                     <span
                       className={`hidden md:block text-xs py-0.5 rounded ${
                         transaction.status === "Completed"
-                          ? " text-green-500"
+                          ? " text-[#8FFFBE]"
                           : transaction.status === "Failed"
-                          ? " text-red-500"
+                          ? " text-[#CE1A11]"
                           : " text-yellow-500"
                       }`}
                     >

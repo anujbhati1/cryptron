@@ -39,10 +39,10 @@ export function TransactionsList({ transactions }: TransactionsListProps) {
                 <span
                   className={`text-xs py-0.5 rounded ${
                     transaction.status === "Completed"
-                      ? " text-green-500"
+                      ? " text-[#8FFFBE]"
                       : transaction.status === "Failed"
-                      ? " text-red-500"
-                      : " text-yellow-500"
+                      ? " text-[#CE1A11]"
+                      : " text-[#F7931A]"
                   }`}
                 >
                   {transaction.status}
