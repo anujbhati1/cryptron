@@ -1,7 +1,7 @@
 import { Bell, ChevronLeft } from "lucide-react";
 import React from "react";
 import { Button } from "./button";
-import Sidebar from "./sidebarW";
+import { Sidebar } from "./sidebar";
 
 export default function Layout({ children }: { children: React.ReactNode }) {
   return (
