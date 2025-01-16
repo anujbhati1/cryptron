@@ -1,15 +1,59 @@
+import { Link, useLocation } from "react-router";
+
 const navItems = [
-  { label: "Dashboard", icon: "/assets/home.svg", active: true },
-  { label: "Wallet", icon: "/assets/wallet.svg" },
-  { label: "Send", icon: "/assets/send-icon.svg" },
-  { label: "Receive", icon: "/assets/received.svg" },
-  { label: "Swap", icon: "/assets/swap.svg" },
-  { label: "Buy/Sell", icon: "/assets/buy.svg" },
-  { label: "Address book", icon: "/assets/address-book.svg" },
-  { label: "Transaction History", icon: "/assets/transaction.svg" },
+  {
+    label: "Dashboard",
+    icon: "/assets/home.svg",
+    iconActive: "/assets/home-red.svg",
+    href: "/dashboard",
+  },
+  {
+    label: "Wallet",
+    icon: "/assets/wallet.svg",
+    iconActive: "/assets/wallet-red.svg",
+    href: "/wallet",
+  },
+  {
+    label: "Send",
+    icon: "/assets/send-icon.svg",
+    iconActive: "/assets/send-icon.svg",
+    href: "#",
+  },
+  {
+    label: "Receive",
+    icon: "/assets/received.svg",
+    iconActive: "/assets/received.svg",
+    href: "#",
+  },
+  {
+    label: "Swap",
+    icon: "/assets/swap.svg",
+    iconActive: "/assets/swap.svg",
+    href: "#",
+  },
+  {
+    label: "Buy/Sell",
+    icon: "/assets/buy.svg",
+    iconActive: "/assets/buy.svg",
+    href: "#",
+  },
+  {
+    label: "Address book",
+    icon: "/assets/address-book.svg",
+    iconActive: "/assets/address-book.svg",
+    href: "#",
+  },
+  {
+    label: "Transaction History",
+    icon: "/assets/transaction.svg",
+    iconActive: "/assets/transaction-red.svg",
+    href: "/transaction-history",
+  },
 ];
 
 export function Sidebar() {
+  const pathname = useLocation().pathname;
+
   return (
     <div className='hidden w-64 bg-[#1C1C1C] min-h-lvh lg:flex flex-col'>
       <div className='p-6 border-b border-white/5'>
@@ -28,20 +72,32 @@ export function Sidebar() {
         <nav className='mt-2 space-y-1'>
           {navItems.map((item) => (
             <div>
-              <a
-                href={"#"}
+              <Link
+                to={item.href}
                 key={item.label}
                 className={`flex items-center gap-3 px-4 py-2 rounded-lg text-sm ${
-                  item.active
+                  item.href === pathname
                     ? "bg-white/10 text-white"
                     : "text-white hover:bg-white/5"
                 }`}
               >
                 <div className='flex justify-center items-center gap-3 text-xs font-light'>
-                  <img src={item.icon} alt='Logout' className='w-5 h-5' />
+                  {item.href === pathname ? (
+                    <img
+                      src={item.iconActive}
+                      alt={item.label}
+                      className={'"w-5 h-5'}
+                    />
+                  ) : (
+                    <img
+                      src={item.icon}
+                      alt={item.label}
+                      className={'"w-5 h-5'}
+                    />
+                  )}
                   {item.label}
                 </div>
-              </a>
+              </Link>
             </div>
           ))}
         </nav>

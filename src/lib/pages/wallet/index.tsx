@@ -2,6 +2,7 @@ import { Button } from "@/lib/components/button";
 import { Card, CardContent } from "@/lib/components/card";
 import { CryptoChart } from "@/lib/components/crypto-chart";
 import { Header } from "@/lib/components/header";
+import { MobileNav } from "@/lib/components/mobile-nav";
 import { Sidebar } from "@/lib/components/sidebar";
 import { ChartData } from "@/lib/types";
 import {
@@ -139,11 +140,11 @@ const quickTransfer: { id: number; icon: string }[] = [
 export default function Dashboard() {
   return (
     <>
-      <div className='flex bg-[#141414] min-h-screen max-lg:px-2'>
+      <div className='flex bg-[#141414] min-h-screen'>
         <Sidebar />
         <div className='flex-1'>
           <Header />
-          <main className='mb-2 px-4 py-2 max-lg:px-0'>
+          <main className='mb-2 px-4 py-2 max-lg:px-2 max-lg:mb-16'>
             <div className='space-y-5'>
               <div className='hidden lg:grid grid-cols-5 gap-4 mb-5'>
                 <Card className='bg-gradient-to-r from-red-900/50 to-red-800/30'>
@@ -423,6 +424,7 @@ export default function Dashboard() {
               </div>
             </div>
           </main>
+          <MobileNav />
         </div>
       </div>
     </>

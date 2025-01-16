@@ -1,6 +1,6 @@
 export function Header() {
   return (
-    <header className='flex max-lg:w-full items-center justify-between mb-2 bg-[#1C1C1C] px-4 py-3.5 border-l border-white/5'>
+    <header className='max-lg:m-5 max-lg:rounded-xl flex items-center justify-between mb-2 bg-[#1C1C1C] px-3 lg:px-4 lg:py-3.5 py-2 lg:border-l border-white/5'>
       <h1 className='hidden lg:block text-2xl text-white font-medium'>
         Welcome to Crypton Wallet
       </h1>

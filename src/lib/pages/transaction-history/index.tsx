@@ -9,7 +9,7 @@ export default function Page() {
       <Sidebar />
       <div className='flex-1'>
         <Header />
-        <main>
+        <main className='max-lg:mb-16'>
           <TransactionHistory />
         </main>
         <MobileNav />
