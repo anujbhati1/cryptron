@@ -139,13 +139,13 @@ const quickTransfer: { id: number; icon: string }[] = [
 export default function Dashboard() {
   return (
     <>
-      <div className='flex bg-[#141414] min-h-screen'>
+      <div className='flex bg-[#141414] min-h-screen max-lg:px-2'>
         <Sidebar />
         <div className='flex-1'>
           <Header />
-          <main className='mb-2 px-4 py-2'>
+          <main className='mb-2 px-4 py-2 max-lg:px-0'>
             <div className='space-y-5'>
-              <div className='grid grid-cols-5 gap-4 mb-5'>
+              <div className='hidden lg:grid grid-cols-5 gap-4 mb-5'>
                 <Card className='bg-gradient-to-r from-red-900/50 to-red-800/30'>
                   <CardContent className='h-full flex flex-col justify-between'>
                     <div className='text-xl font-extrabold text-gray-200 mb-2'>
@@ -183,10 +183,10 @@ export default function Dashboard() {
                               />
                             </div>
                             <div>
-                              <div className='font-medium text-white'>
+                              <div className='font-medium text-white max-sm:text-sm'>
                                 {coin.name} ({coin.symbol})
                               </div>
-                              <div className='flex items-center gap-2 text-sm text-gray-400'>
+                              <div className='hidden lg:flex items-center gap-2 text-sm text-gray-400'>
                                 <span className='text-xs text-white'>
                                   Wallet Address:
                                 </span>
@@ -204,10 +204,10 @@ export default function Dashboard() {
                             </div>
                           </div>
                           <div className='text-right'>
-                            <div className='font-extrabold text-white text-lg'>
+                            <div className='font-extrabold text-white text-lg max-lg:text-base'>
                               {coin.balance}
                             </div>
-                            <div className='text-sm text-white'>
+                            <div className='text-sm max-lg:text-xs text-white'>
                               {coin.value}
                             </div>
                           </div>

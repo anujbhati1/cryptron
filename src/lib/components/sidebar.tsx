@@ -11,7 +11,7 @@ const navItems = [
 
 export function Sidebar() {
   return (
-    <div className='w-64 bg-[#1C1C1C] min-h-lvh flex flex-col'>
+    <div className='hidden w-64 bg-[#1C1C1C] min-h-lvh lg:flex flex-col'>
       <div className='p-6 border-b border-white/5'>
         <div className='flex items-center gap-1'>
           <img

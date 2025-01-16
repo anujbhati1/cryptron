@@ -8,12 +8,12 @@ interface CardProps {
 
 export function Card({ className, children }: CardProps) {
   return (
-    <div className={cn("rounded-xl bg-[#fefefe]/[0.04]", className)}>
+    <div className={cn("rounded-xl lg:bg-[#fefefe]/[0.04]", className)}>
       {children}
     </div>
   );
 }
 
 export function CardContent({ className, children }: CardProps) {
-  return <div className={cn("p-6", className)}>{children}</div>;
+  return <div className={cn("p-6 max-lg:p-2", className)}>{children}</div>;
 }
