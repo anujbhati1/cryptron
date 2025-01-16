@@ -28,4 +28,23 @@ export interface CryptoChartData {
   icon: string;
 }
 
+export interface QuickTransferType {
+  id: number;
+  icon: string;
+}
+
+export interface Coin {
+  symbol: string;
+  name: string;
+  balance: string;
+  value: string;
+  address: string;
+  icon: string;
+}
+
+export interface MockChartData {
+  date: string;
+  value: number;
+}
+
 export type ChartData = Record<string, CryptoChartData>;

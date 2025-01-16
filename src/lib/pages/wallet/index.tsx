@@ -4,7 +4,12 @@ import { CryptoChart } from "@/lib/components/crypto-chart";
 import { Header } from "@/lib/components/header";
 import { MobileNav } from "@/lib/components/mobile-nav";
 import { Sidebar } from "@/lib/components/sidebar";
-import { ChartData } from "@/lib/types";
+import {
+  chartData,
+  coins,
+  mockChartData,
+  quickTransfer,
+} from "@/lib/constants";
 import {
   Area,
   AreaChart,
@@ -13,129 +18,6 @@ import {
   ResponsiveContainer,
   XAxis,
 } from "recharts";
-
-const mockChartData = [
-  { date: "21/09", value: 60 },
-  { date: "21/09", value: 65 },
-  { date: "21/09", value: 45 },
-  { date: "21/09", value: 75 },
-  { date: "21/09", value: 95 },
-  { date: "21/09", value: 85 },
-  { date: "21/09", value: 70 },
-];
-
-const coins = [
-  {
-    symbol: "BTC",
-    name: "Bitcoin",
-    balance: "1.2",
-    value: "$80,399.12",
-    address: "bvdw355509********4gbnwou432m",
-    icon: "/assets/btc-icon.svg",
-  },
-  {
-    symbol: "BNB",
-    name: "Binance Coin",
-    balance: "1.2",
-    value: "$80,399.12",
-    address: "bvdw355509********4gbnwou432m",
-    icon: "/assets/binance-icon.svg",
-  },
-  {
-    symbol: "ETH",
-    name: "Ethereum",
-    balance: "1.2",
-    value: "$80,399.12",
-    address: "bvdw355509********4gbnwou432m",
-    icon: "/assets/eth-icon.svg",
-  },
-  {
-    symbol: "TRX",
-    name: "Tron",
-    balance: "1.2",
-    value: "$80,399.12",
-    address: "bvdw355509********4gbnwou432m",
-    icon: "/assets/tron-icon.svg",
-  },
-  {
-    symbol: "BNB",
-    name: "Binance Coin",
-    balance: "1.2",
-    value: "$80,399.12",
-    address: "bvdw355509********4gbnwou432m",
-    icon: "/assets/binance-icon.svg",
-  },
-  {
-    symbol: "ETH",
-    name: "Ethereum",
-    balance: "1.2",
-    value: "$80,399.12",
-    address: "bvdw355509********4gbnwou432m",
-    icon: "/assets/eth-icon.svg",
-  },
-];
-
-const chartData: ChartData = {
-  BTC: {
-    symbol: "BTC",
-    price: 76296.6,
-    change: "-0.01%",
-    color: "#F7931A",
-    data: [65, 59, 80, 81, 56, 55, 40, 56, 40],
-    icon: "/assets/btc-icon.svg",
-  },
-  ETH: {
-    symbol: "ETH",
-    price: 76296.6,
-    change: "-0.01%",
-    color: "#627EEA",
-    data: [45, 59, 30, 81, 56, 55, 40],
-    icon: "/assets/eth-icon.svg",
-  },
-  TRX: {
-    symbol: "TRX",
-    price: 76296.6,
-    change: "-0.01%",
-    color: "#FF0013",
-    data: [65, 59, 80, 31, 56, 25, 40],
-    icon: "/assets/tron-icon.svg",
-  },
-  SOL: {
-    symbol: "SOL",
-    price: 76296.6,
-    change: "+0.01%",
-    color: "#00FFA3",
-    data: [65, 59, 40, 81, 56, 55, 80],
-    icon: "/assets/sol-icon.svg",
-  },
-};
-
-const quickTransfer: { id: number; icon: string }[] = [
-  {
-    id: 1,
-    icon: "/assets/user1.svg",
-  },
-  {
-    id: 2,
-    icon: "/assets/user2.svg",
-  },
-  {
-    id: 3,
-    icon: "/assets/user3.svg",
-  },
-  {
-    id: 4,
-    icon: "/assets/user4.svg",
-  },
-  {
-    id: 5,
-    icon: "/assets/user5.svg",
-  },
-  {
-    id: 6,
-    icon: "/assets/plus-circle-dotted.svg",
-  },
-];
 
 export default function Dashboard() {
   return (
