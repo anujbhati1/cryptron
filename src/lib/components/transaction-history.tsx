@@ -61,16 +61,16 @@ const transactionsYesterday = [
 
 export function TransactionHistory() {
   return (
-    <div className='pb-20 md:pb-6 bg-[#1C1C1C] rounded-xl m-3'>
+    <div className='pb-20 md:pb-6 lg:bg-[#1C1C1C] rounded-xl m-3'>
       {/* Search Section */}
-      <div className='p-4 md:p-6'>
+      <div className='p-2 sm:p-4 lg:p-6'>
         <div className='flex justify-between items-center mb-6'>
-          <div>
+          <div className='hidden lg:block'>
             <h2 className='text-white text-base font-bold'>
               Transaction History
             </h2>
           </div>
-          <div className='relative flex items-center lg:min-w-72'>
+          <div className='relative flex items-center lg:min-w-72 max-lg:w-full'>
             <img
               src='/assets/search.svg'
               alt='Search'
@@ -105,7 +105,7 @@ export function TransactionHistory() {
       </div>
 
       {/* Transactions List */}
-      <div className='space-y-4 px-4 md:px-6'>
+      <div className='space-y-4 px-2 lg:px-4 md:px-6'>
         <div>
           <h3 className='text-white mb-4 text-sm font-light'>Today</h3>
           <div className='space-y-3'>
@@ -124,13 +124,13 @@ export function TransactionHistory() {
                 <div className='flex-1'>
                   <div className='flex items-center gap-2'>
                     <span className='text-white'>{transaction.type}</span>
-                    <div className='text-xs text-gray-400 mt-1'>
+                    <div className='hidden sm:block text-xs text-gray-400 mt-1'>
                       Wallet: {transaction.wallet}
                     </div>
                   </div>
                   <div className='flex items-center'>
                     <span
-                      className={`text-xs py-0.5 rounded ${
+                      className={`hidden md:block text-xs py-0.5 rounded ${
                         transaction.status === "Completed"
                           ? " text-green-500"
                           : transaction.status === "Failed"
@@ -140,7 +140,7 @@ export function TransactionHistory() {
                     >
                       {transaction.status}
                     </span>
-                    <div className='h-2 w-2 bg-gray-600 rounded-full mx-3'></div>
+                    <div className='hidden md:block h-2 w-2 bg-gray-600 rounded-full mx-3'></div>
                     <span className='text-xs text-gray-400 '>
                       {transaction.date}
                     </span>
@@ -148,9 +148,20 @@ export function TransactionHistory() {
                 </div>
                 <div className='text-right'>
                   <div className='text-white'>${transaction.amount}</div>
-                  <div className='text-xs text-white mt-1'>
+                  <div className='hidden md:block text-xs text-white mt-1'>
                     {transaction.currency}
                   </div>
+                  <span
+                    className={`md:hidden max-md::block text-xs py-0.5 rounded ${
+                      transaction.status === "Completed"
+                        ? " text-green-500"
+                        : transaction.status === "Failed"
+                        ? " text-red-500"
+                        : " text-yellow-500"
+                    }`}
+                  >
+                    {transaction.status}
+                  </span>
                 </div>
               </div>
             ))}
@@ -175,13 +186,13 @@ export function TransactionHistory() {
                 <div className='flex-1'>
                   <div className='flex items-center gap-2'>
                     <span className='text-white'>{transaction.type}</span>
-                    <div className='text-xs text-gray-400 mt-1'>
+                    <div className='hidden sm:block text-xs text-gray-400 mt-1'>
                       Wallet: {transaction.wallet}
                     </div>
                   </div>
                   <div className='flex items-center'>
                     <span
-                      className={`text-xs py-0.5 rounded ${
+                      className={`hidden md:block text-xs py-0.5 rounded ${
                         transaction.status === "Completed"
                           ? " text-green-500"
                           : transaction.status === "Failed"
@@ -191,7 +202,7 @@ export function TransactionHistory() {
                     >
                       {transaction.status}
                     </span>
-                    <div className='h-2 w-2 bg-gray-600 rounded-full mx-3'></div>
+                    <div className='hidden md:block h-2 w-2 bg-gray-600 rounded-full mx-3'></div>
                     <span className='text-xs text-gray-400 '>
                       {transaction.date}
                     </span>
@@ -199,9 +210,20 @@ export function TransactionHistory() {
                 </div>
                 <div className='text-right'>
                   <div className='text-white'>${transaction.amount}</div>
-                  <div className='text-xs text-white mt-1'>
+                  <div className='hidden md:block text-xs text-white mt-1'>
                     {transaction.currency}
                   </div>
+                  <span
+                    className={`md:hidden max-md::block text-xs py-0.5 rounded ${
+                      transaction.status === "Completed"
+                        ? " text-green-500"
+                        : transaction.status === "Failed"
+                        ? " text-red-500"
+                        : " text-yellow-500"
+                    }`}
+                  >
+                    {transaction.status}
+                  </span>
                 </div>
               </div>
             ))}
